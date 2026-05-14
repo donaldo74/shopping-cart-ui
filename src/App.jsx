@@ -29,7 +29,8 @@ const App = () => {
     {loading && <p>Loading...</p>}
     {error && <div className='error'>{error}</div>}
 
-    <ProductList products={ products} />
+    <ProductList products={products} />
+    
   </div>;
 }
  
