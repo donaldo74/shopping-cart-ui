@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing"
+import { ProductProvider } from './context/ProductContext.jsx';
 
 Sentry.init({
   dsn: "https://b4237412e9bd7fcdbd96797ea0cba2e4@o4511353910198272.ingest.de.sentry.io/4511387059093584",
@@ -14,6 +15,8 @@ Sentry.init({
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <ProductProvider>
+      <App />
+    </ProductProvider>
   </StrictMode>,
 )
