@@ -34,7 +34,27 @@ const Header = () => {
               {cart.length === 0 ? (
                 <p className="text-gray-500 text-sm">Your cart is empty</p>
               ) : (
-                  <></>
+                  <>
+                    <ul className="max-h-60 overflow-y-auto divide-y divide-gray-200">
+                      {cart.map((item) => (
+                        <li
+                          key={item.id}
+                          className="flex justify-between items-center py-2">
+                          <div>
+                            <p className="font-semibold">{item.name}</p>
+                            <p className="text-sm text-gray-500">
+                              {item.qty} x ${item.price}
+                            </p>
+                            </div>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-4 flex justify-between font-semibold">
+                      <span>Total:</span>
+                      <span>${total}</span>
+                    </div>
+                  </>
               )}
             </div>
           </div>
